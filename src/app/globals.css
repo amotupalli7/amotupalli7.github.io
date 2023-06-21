@@ -30,3 +30,13 @@ body {
   font-family: "burtons";
   src: url("/public/Burtons.otf")
 }
+
+.inline-block {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.inline-block:hover {
+  transform: translateY(-10px);
+}
+
