@@ -13,6 +13,7 @@ import consulting from "../../public/consulting.png"
 import abhipic from "../../public/abhipic.jpg"
 import umass_logo from "../../public/umass_logo.png"
 import advisor from "../../public/advisor.png"
+import alexion from "../../public/alexion.png"
 
 import web1 from "../../public/web1.png"
 import web2 from "../../public/web2.png"
@@ -108,10 +109,10 @@ export default function Home() {
 
               <h4 className=" py-4 text-teal-500">Upcoming Coursework: Fall 2023</h4>
                 <div className=" grid grid-cols-2 gap-2">
-                <p className=" text-gray-500 py-1">CS311: Algorithms</p>
-                <p className=" text-gray-500 py-1">CS320: Software Engineering</p>
-                <p className=" text-gray-500 py-1">CS345: Data Management</p>
-                <p className=" text-gray-500 py-1">CS360: Computer & Network Security</p>
+                <p className=" text-gray-500 py-1 dark:text-white">CS311: Algorithms</p>
+                <p className=" text-gray-500 py-1 dark:text-white">CS320: Software Engineering</p>
+                <p className=" text-gray-500 py-1 dark:text-white">CS345: Data Management</p>
+                <p className=" text-gray-500 py-1 dark:text-white">CS360: Computer & Network Security</p>
                 </div>
 
             </div>
@@ -128,23 +129,30 @@ export default function Home() {
         <div className=" lg:flex gap-10 dark:text-gray-300">
 
             <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800">
-              <Image src={advisor} width={100} height={100} className=" m-auto"/>
+              <Image src={advisor} width={200} height={200} className=" m-auto"/>
               <h3 className=" text-lg font-medium pt-8 pb-2">Advisor360</h3>
               <p className=" py-2">Software Engineer Intern</p>
               <h4 className=" py-4 text-teal-500">June 2023 - Current</h4>
-              <p className=" text-gray-500 py-1">Photoshop</p>
-              <p className=" text-gray-500 py-1">Illustrator</p>
-              <p className=" text-gray-500 py-1">FIgma</p>
+              <ul className=" list-none text-gray-500 py-1 dark:text-white px-10">
+                <li className="  py-1"><span className=" mr-2">&#8594;</span>Designing a mock API using Java & Wiremock for a 3rd party endpoint - end up saving the team thousands in API calls.</li>
+                <li className="  py-1"><span className=" mr-2">&#8594;</span>Fixing various bugs and updating outdated code and packages</li>
+                <li className="  py-1"><span className=" mr-2">&#8594;</span> .NET | C# | SQL | Jenkins | Jira | Git | SDLC </li>        
+              </ul>
             </div>
 
             <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800">
-              <Image src={code} width={100} height={100} className=" m-auto"/>
-              <h3 className=" text-lg font-medium pt-8 pb-2">Alexion Pharmaceuticals</h3>
+              <Image src={alexion} width={200} height={200} className=" m-auto"/>
+              <h3 className=" text-lg font-medium pt-8 pb-2">Alexion (AstraZeneca Rare Disease)</h3>
               <p className=" py-2">IT Software Engineer Intern</p>
-              <h4 className=" py-4 text-teal-500">May 2022 - August 2022</h4>
-              <p className=" text-gray-500 py-1">Photoshop</p>
-              <p className=" text-gray-500 py-1">Illustrator</p>
-              <p className=" text-gray-500 py-1">FIgma</p>
+              <h4 className=" py-4 text-teal-500">June 2022 - August 2022</h4>
+              <ul className=" list-none text-gray-500 py-1 dark:text-white px-10">
+                <li className="  py-1"><span className=" mr-2">&#8594;</span>Wrote a python script for monitoring account compliance resulting in efficient database access. </li>
+                <li className="  py-1"><span className=" mr-2">&#8594;</span>Analyzed existing process for regular maintenance of database and optimized by removing filter saving one time 15 GB and ongoing 12 GB per month</li>
+                <li className="  py-1"><span className=" mr-2">&#8594;</span>Innovated querying capability with a user-friendly interface allowing non-technical users access to human readable error messages resulting in real-time decision making</li>
+                <li className="  py-1"><span className=" mr-2">&#8594;</span>Published a knowledge base article to document how to fix SSL error to prevent error for colleaguesgoing forward</li>
+                <li className="  py-1"><span className=" mr-2">&#8594;</span>Won a hackathon to kickstart Alexion Rideshare App using React Native, Node.js, git</li>  
+                <li className="  py-1"><span className=" mr-2">&#8594;</span> Python | Docker | Databases | REST API's | Agile </li>        
+              </ul>
             </div>
 
         </div>
