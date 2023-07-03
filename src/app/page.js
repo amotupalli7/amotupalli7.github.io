@@ -102,6 +102,15 @@ export default function Home() {
                 <p className=" text-gray-500 py-1">MATH 132H: Honors Calc II</p>
                 <p className=" text-gray-500 py-1">MATH 235: Linear Algebra</p>
               </div>
+
+              <h4 className=" py-4 text-teal-500">Upcoming Coursework: Fall 2023</h4>
+                <div className=" grid grid-cols-2 gap-2">
+                <p className=" text-gray-500 py-1">CS311: Algorithms</p>
+                <p className=" text-gray-500 py-1">CS320: Software Engineering</p>
+                <p className=" text-gray-500 py-1">CS345: Data Management</p>
+                <p className=" text-gray-500 py-1">CS360: Computer & Network Security</p>
+                </div>
+
             </div>
       </section>
 
@@ -127,9 +136,9 @@ export default function Home() {
 
             <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800">
               <Image src={code} width={100} height={100} className=" m-auto"/>
-              <h3 className=" text-lg font-medium pt-8 pb-2">Beatiful Designs</h3>
-              <p className=" py-2">Creating elegant suited for you needs</p>
-              <h4 className=" py-4 text-teal-500">Design tools I use</h4>
+              <h3 className=" text-lg font-medium pt-8 pb-2">Alexion Pharmaceuticals</h3>
+              <p className=" py-2">IT Software Engineer Intern</p>
+              <h4 className=" py-4 text-teal-500">May 2022 - August 2022</h4>
               <p className=" text-gray-500 py-1">Photoshop</p>
               <p className=" text-gray-500 py-1">Illustrator</p>
               <p className=" text-gray-500 py-1">FIgma</p>
