@@ -6,19 +6,20 @@ import { AiFillLinkedin, AiFillGithub} from "react-icons/ai";
 import React, { useState } from "react";
 import Image from "next/image";
 
-import deved from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/dev-ed-wave.png"
-import design from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/design.png"
-import code from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/code.png"
-import consulting from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/consulting.png"
-import abhipic from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/abhipic.jpg"
-import umass_logo from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/umass_logo.png"
+import deved from "../../public/dev-ed-wave.png"
+import design from "../../public/design.png"
+import code from "../../public/code.png"
+import consulting from "../../public/consulting.png"
+import abhipic from "../../public/abhipic.jpg"
+import umass_logo from "../../public/umass_logo.png"
+import advisor from "../../public/advisor.png"
 
-import web1 from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/web1.png"
-import web2 from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/web2.png"
-import web3 from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/web3.png"
-import web4 from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/web4.png"
-import web5 from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/web5.png"
-import web6 from "C:/Users/sspma/OneDrive/Desktop/PortfolioWebsite/public/web6.png"
+import web1 from "../../public/web1.png"
+import web2 from "../../public/web2.png"
+import web3 from "../../public/web3.png"
+import web4 from "../../public/web4.png"
+import web5 from "../../public/web5.png"
+import web6 from "../../public/web6.png"
 import { Damion } from "next/font/google";
 
 {/* */}
@@ -48,6 +49,8 @@ export default function Home() {
 
         {/* Header info */}
         <div className=" text-center p-10 dark:text-white">
+
+
           <h2 className=" text-4xl py-2 text-teal-600 font-medium md:text-6xl sm:text-5xl">      
 
             <span className={`inline-block dark:text-white hover:text-gold transition-colors duration-300`}> A</span>
@@ -75,7 +78,7 @@ export default function Home() {
           <a href="https://github.com/amotupalli7" target="_blank"><AiFillGithub  className=" dark:text-white"/></a>
         </div>
 
-        <div className=" relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 mt-20 overflow-hidden md:h-96 md:w-96">
+        <div className=" relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 mt-50 overflow-hidden md:h-96 md:w-96">
           <Image src={abhipic} layout="fill" objectFit="cover"></Image>
         </div>
       </section>
@@ -92,15 +95,15 @@ export default function Home() {
               <h3 className=" text-lg font-medium pt-8 pb-2">B.S. Computer Science</h3>
               <p className=" py-2">Class of 2025</p>
               <h4 className=" py-4 text-teal-500">Relevant Coursework</h4>
-              <div className=" grid grid-cols-2 gap-2">
-                <p className=" text-gray-500 py-1">CS453H: Honors Computer Networks</p>
-                <p className=" text-gray-500 py-1">CS250: Intro to Computation</p>
-                <p className=" text-gray-500 py-1">CS240: Reasoning Under Uncertainty</p>
-                <p className=" text-gray-500 py-1">CS230: Computer Systems</p>
-                <p className=" text-gray-500 py-1">CS220: Programming Methodology</p>
-                <p className=" text-gray-500 py-1">MATH 233: Multivariate Calc</p>
-                <p className=" text-gray-500 py-1">MATH 132H: Honors Calc II</p>
-                <p className=" text-gray-500 py-1">MATH 235: Linear Algebra</p>
+              <div className=" grid grid-cols-2 gap-2  ">
+                <p className=" text-gray-500 py-1 dark:text-white">CS453H: Honors Computer Networks</p>
+                <p className=" text-gray-500 py-1 dark:text-white">CS250: Intro to Computation</p>
+                <p className=" text-gray-500 py-1 dark:text-white">CS240: Reasoning Under Uncertainty</p>
+                <p className=" text-gray-500 py-1 dark:text-white">CS230: Computer Systems</p>
+                <p className=" text-gray-500 py-1 dark:text-white">CS220: Programming Methodology</p>
+                <p className=" text-gray-500 py-1 dark:text-white">MATH 233: Multivariate Calc</p>
+                <p className=" text-gray-500 py-1 dark:text-white">MATH 132H: Honors Calc II</p>
+                <p className=" text-gray-500 py-1 dark:text-white">MATH 235: Linear Algebra</p>
               </div>
 
               <h4 className=" py-4 text-teal-500">Upcoming Coursework: Fall 2023</h4>
@@ -125,7 +128,7 @@ export default function Home() {
         <div className=" lg:flex gap-10 dark:text-gray-300">
 
             <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800">
-              <Image src={design} width={100} height={100} className=" m-auto"/>
+              <Image src={advisor} width={100} height={100} className=" m-auto"/>
               <h3 className=" text-lg font-medium pt-8 pb-2">Advisor360</h3>
               <p className=" py-2">Software Engineer Intern</p>
               <h4 className=" py-4 text-teal-500">June 2023 - Current</h4>
@@ -144,15 +147,6 @@ export default function Home() {
               <p className=" text-gray-500 py-1">FIgma</p>
             </div>
 
-            <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800">
-              <Image src={consulting} width={100} height={100} className=" m-auto"/>
-              <h3 className=" text-lg font-medium pt-8 pb-2">Beatiful Designs</h3>
-              <p className=" py-2">Creating elegant suited for you needs</p>
-              <h4 className=" py-4 text-teal-500">Design tools I use</h4>
-              <p className=" text-gray-500 py-1">Photoshop</p>
-              <p className=" text-gray-500 py-1">Illustrator</p>
-              <p className=" text-gray-500 py-1">FIgma</p>
-            </div>
         </div>
       </section>
 
