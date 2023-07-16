@@ -16,6 +16,18 @@
   }
 }
 
+
+/* start */
+
+
+
+
+
+/* end */
+
+
+
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -33,10 +45,13 @@ body {
 
 .inline-block {
   display: inline-block;
-  transition: transform 0.3s;
+  transition: transform 0.25s;
 }
 
 .inline-block:hover {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
 }
 
+html {
+  scroll-behavior: smooth;
+}

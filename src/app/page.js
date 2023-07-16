@@ -2,28 +2,31 @@
 'use client'
 import Head from "next/head";
 import {BsFillMoonStarsFill} from 'react-icons/bs';
-import { AiFillLinkedin, AiFillGithub} from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub,AiOutlineMenu,AiOutlineClose,AiOutlineMail,AiOutlineRobot} from "react-icons/ai";
+import {BsEmojiSmile} from "react-icons/bs";
+import { HiCube } from "react-icons/hi";
 import React, { useState } from "react";
 import Image from "next/image";
 
-import deved from "../../public/dev-ed-wave.png"
-import design from "../../public/design.png"
-import code from "../../public/code.png"
-import consulting from "../../public/consulting.png"
-import abhipic from "../../public/abhipic.jpg"
 import umass_logo from "../../public/umass_logo.png"
 import advisor from "../../public/advisor.png"
 import alexion from "../../public/alexion.png"
 
-import web1 from "../../public/web1.png"
-import web2 from "../../public/web2.png"
-import web3 from "../../public/web3.png"
-import web4 from "../../public/web4.png"
-import web5 from "../../public/web5.png"
-import web6 from "../../public/web6.png"
+import MoodMix1 from "../../public/MoodMix1.png"
+
+import SnapSudoku from "../../public/SnapSudoku.png"
+import Clue from "../../public/clue.jpg"
+import Stocks from "../../public/stocks.jpg"
+
+import { MapContainer, TileLayer, Marker,Popup } from 'react-leaflet';
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
+import 'leaflet-defaulticon-compatibility';
+
 import { Damion } from "next/font/google";
 
+
 {/* */}
+
 
 export default function Home() {
 
@@ -33,45 +36,97 @@ export default function Home() {
   };
 
 
+  let Links =[
+    {name:"About",link:"#about"},
+    {name:"Experience",link:"#experience"},
+    {name:"Projects",link:"#projects"},
+    {name:"Contact",link:"#contact"},
+  ];
+  let [open,setOpen]=useState(false);
+
+  const coordinates = [41.7658, -72.6734];
 
   return (
     <div className = {darkMode ? "dark" : ""}>
     <main className=" bg-gray-100 px-10 md:px-20 lg:px-40 dark:bg-gray-900">
       
-      {/* Navbar */}
-      <section className="min-h-screen ">
-        <nav className="py-10 mb-12 flex justify-between">
-          <h1 className=" text-xl dark:text-white">Abhi's Website</h1>
-          <ul className="flex items-center">
-            <li><BsFillMoonStarsFill onClick= {toggleDarkMode}  className=" cursor-pointer text-2xl dark:text-white"/> </li>
-            <li><a href="#" className=" bg-gradient-to-r from-cyan-500 to-teal-500 bg-cyan-500 text-white px-4 py-2 rounded-md ml-8">Resume</a></li>
+      {/* Navbar Regular */}
+      <section className=" min-h-screen ">
+        {/* <nav className="py-10 mb-12 flex justify-between ">
+          <h1 className=" text-xl dark:text-white">Abhi</h1>
+          <ul className="flex items-center ">
+            <li><a href="#about" className=" hover:underline hover:underline-offset-8 text-black text-lg py-2 rounded-md ml-16 dark:text-white">About</a></li>
+            <li><a href="#experience" className=" hover:underline hover:underline-offset-8 text-black text-lg py-2 rounded-md ml-8 dark:text-white">Experience</a></li>
+            <li><a href="#projects" className=" hover:underline hover:underline-offset-8 text-black text-lg py-2 rounded-md ml-8 dark:text-white">Projects</a></li>
+            <li><a href="#contact" className=" hover:underline hover:underline-offset-8 text-black text-lg py-2 rounded-md ml-8 dark:text-white">Contact</a></li>
+            <li><BsFillMoonStarsFill onClick= {toggleDarkMode}  className=" cursor-pointer text-2xl  ml-16 dark:text-white "/> </li>
+
           </ul>
+        </nav> */}
+
+        {/* Navbar Hamburger */}
+        <nav className="py-10 mb-12 flex justify-between ">
+          <div className='w-full fixed top-0 left-0 bg-gray-200 mb-12'>
+            <div className='md:flex items-center justify-between py-4 md:px-10 px-7'>
+            <div className='font-bold text-2xl cursor-pointer flex items-center text-gray-800'>
+            <span className='text-3xl text-teal-600 mr-1 pt pr-2'>
+            <a href="#top">
+              <BsEmojiSmile/>
+            </a>
+            </span>
+            <a href="#top">
+              Abhi
+            </a>
+            </div>
+          
+            <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
+            {open ? <AiOutlineClose className="pb-1" /> : <AiOutlineMenu className="pb-1" />}
+              <ion-icon name={open ? 'close':'menu'}></ion-icon>
+            </div>
+
+            <ul className={`max-w-full bg-gray-200 md:flex md:items-center md:pb-0 pb-12 absolute md:static  
+            md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all ${open ? 'top-15 ':'top-[-490px]'}`}>
+              {
+                Links.map((link)=>(
+                  <li key={link.name} className='md:ml-8 lg:text-xl sm:text-sm md:my-0 my-7 '>
+                    <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500' onClick={()=>setOpen(!open)}>{link.name}</a>
+                  </li>
+                ))
+              }
+              <li><BsFillMoonStarsFill onClick= {toggleDarkMode}  className=" cursor-pointer lg:text-2xl sm:text-lg lg:ml-16 sm:ml-4 "/> </li>
+            </ul>
+            </div>
+          </div>
         </nav>
+      
 
         {/* Header info */}
         <div className=" text-center p-10 dark:text-white">
 
-
-          <h2 className=" text-4xl py-2 text-teal-600 font-medium md:text-6xl sm:text-5xl">      
-
-            <span className={`inline-block dark:text-white hover:text-gold transition-colors duration-300`}> A</span>
-            <span className={`inline-block dark:text-white`}> b</span>
-            <span className={`inline-block dark:text-white`}> h</span>
-            <span className={`inline-block dark:text-white`}> i</span>
-            <span>&nbsp;</span> {/* Space */}
-            <span className={`inline-block dark:text-white`}>M</span>
-            <span className={`inline-block dark:text-white`}>o</span>
-            <span className={`inline-block dark:text-white`}>t</span>
-            <span className={`inline-block dark:text-white`}>u</span>
-            <span className={`inline-block dark:text-white`}>p</span>
-            <span className={`inline-block dark:text-white`}>a</span>
-            <span className={`inline-block dark:text-white`}>l</span>
-            <span className={`inline-block dark:text-white`}>l</span>
-            <span className={`inline-block dark:text-white`}>i</span>
+          <h2 className="text-4xl py-2 text-teal-600 font-medium md:text-6xl sm:text-5xl dark:text-yellow-400">Hello!</h2>
+          <h2 className=" text-4xl py-2 text-teal-600 font-medium md:text-6xl sm:text-5xl dark:text-yellow-400"> 
+            <span>I'm </span>  
+            <span className={`inline-block dark:text-yellow-400`}> A</span>
+            <span className={`inline-block dark:text-yellow-400`}>b</span>
+            <span className={`inline-block dark:text-yellow-400`}> h</span>
+            <span className={`inline-block dark:text-yellow-400`}> i</span>
+            <span className={`inline-block dark:text-yellow-400`}> r</span>
+            <span className={`inline-block dark:text-yellow-400`}> a</span>
+            <span className={`inline-block dark:text-yellow-400`}> m</span>
+            <span></span> {/* Space */}
+            <span className={`inline-block dark:text-yellow-400`}>M</span>
+            <span className={`inline-block dark:text-yellow-400`}>o</span>
+            <span className={`inline-block dark:text-yellow-400`}>t</span>
+            <span className={`inline-block dark:text-yellow-400`}>u</span>
+            <span className={`inline-block dark:text-yellow-400`}>p</span>
+            <span className={`inline-block dark:text-yellow-400`}>a</span>
+            <span className={`inline-block dark:text-yellow-400`}>l</span>
+            <span className={`inline-block dark:text-yellow-400`}>l</span>
+            <span className={`inline-block dark:text-yellow-400`}>i</span>
 
           </h2>
           <h3 className=" text 2xl py-2 md:text-3xl">Software Engineer</h3>
-          <p className=" text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-gray-300">Aspiring software engineer. Looking for ways to grow knowledge through industry experience.</p>
+          <p className=" text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-gray-300">CS student and aspiring software engineer. Looking for ways to grow knowledge through industry experience.</p>
         </div>
 
         <div className=" text-5xl flex justify-center gap-16 py-3 text-gray-600">
@@ -79,48 +134,38 @@ export default function Home() {
           <a href="https://github.com/amotupalli7" target="_blank"><AiFillGithub  className=" dark:text-white"/></a>
         </div>
 
-        <div className=" relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 mt-50 overflow-hidden md:h-96 md:w-96">
-          <Image src={abhipic} layout="fill" objectFit="cover"></Image>
-        </div>
       </section>
+
       
-      {/* Education Section*/}
-      <section>
-        <h3 className=" text-3xl py-1 dark:text-white">Education</h3>
+      {/* About Section*/}
+      <section id = "about">
+        <h3 className=" text-3xl py-1 dark:text-white">About Me</h3>
         <p className=" text-md py-5 leading-8 text-gray-800 dark:text-gray-300">
-              I am a rising junior at the <span className=" text-teal-500"><a href="https://www.cics.umass.edu/" target="_blank">University of Massachussetts Amherst</a></span> and part of the <span className=" text-teal-500"><a href="https://www.umass.edu/honors/" target="_blank">Commonwealth Honors College</a>.</span>
+              I am a rising junior at the  
+        <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.cics.umass.edu/" target="_blank"> University of Massachussetts Amherst</a></span> and member of 
+        <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.umass.edu/honors/" target="_blank"> Commonwealth Honors College</a>.</span>
         </p>
 
         <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800 dark:text-gray-300">
               <Image src={umass_logo} width={150} height={150} className=" m-auto"/>
-              <h3 className=" text-lg font-medium pt-8 pb-2">B.S. Computer Science</h3>
-              <p className=" py-2">Class of 2025</p>
-              <h4 className=" py-4 text-teal-500">Relevant Coursework</h4>
+              <h3 className=" text-lg font-medium pt-8 pb-2">B.S. Computer Science | 2025</h3>
+              <h4 className=" py-4 text-teal-500 dark:text-yellow-400">Coursework</h4>
               <div className=" grid grid-cols-2 gap-2  ">
-                <p className=" text-gray-500 py-1 dark:text-white">CS453H: Honors Computer Networks</p>
-                <p className=" text-gray-500 py-1 dark:text-white">CS250: Intro to Computation</p>
-                <p className=" text-gray-500 py-1 dark:text-white">CS240: Reasoning Under Uncertainty</p>
-                <p className=" text-gray-500 py-1 dark:text-white">CS230: Computer Systems</p>
-                <p className=" text-gray-500 py-1 dark:text-white">CS220: Programming Methodology</p>
-                <p className=" text-gray-500 py-1 dark:text-white">MATH 233: Multivariate Calc</p>
-                <p className=" text-gray-500 py-1 dark:text-white">MATH 132H: Honors Calc II</p>
-                <p className=" text-gray-500 py-1 dark:text-white">MATH 235: Linear Algebra</p>
+                <p className=" text-gray-500 py-1 dark:text-white">Honors Computer Networks</p>
+                <p className=" text-gray-500 py-1 dark:text-white">Computer System Principles</p>
+                <p className=" text-gray-500 py-1 dark:text-white">Programming Methodologies</p>
+                <p className=" text-gray-500 py-1 dark:text-white">Data Structures</p>
+                <p className=" text-gray-500 py-1 dark:text-white">Algorithms</p>
+                <p className=" text-gray-500 py-1 dark:text-white">Software Engineering</p>
+                <p className=" text-gray-500 py-1 dark:text-white">Data Management</p>
+                <p className=" text-gray-500 py-1 dark:text-white">Computer & Network Security</p>
               </div>
-
-              <h4 className=" py-4 text-teal-500">Upcoming Coursework: Fall 2023</h4>
-                <div className=" grid grid-cols-2 gap-2">
-                <p className=" text-gray-500 py-1 dark:text-white">CS311: Algorithms</p>
-                <p className=" text-gray-500 py-1 dark:text-white">CS320: Software Engineering</p>
-                <p className=" text-gray-500 py-1 dark:text-white">CS345: Data Management</p>
-                <p className=" text-gray-500 py-1 dark:text-white">CS360: Computer & Network Security</p>
-                </div>
-
             </div>
       </section>
 
 
       {/* Experience Section*/}
-      <section>
+      <section id = "experience">
         <div>
           <h3 className=" text-3xl py-1 dark:text-white">Experience</h3>
  
@@ -132,11 +177,9 @@ export default function Home() {
               <Image src={advisor} width={200} height={200} className=" m-auto"/>
               <h3 className=" text-lg font-medium pt-8 pb-2">Advisor360</h3>
               <p className=" py-2">Software Engineer Intern</p>
-              <h4 className=" py-4 text-teal-500">June 2023 - Current</h4>
-              <ul className=" list-none text-gray-500 py-1 dark:text-white px-10">
-                <li className="  py-1"><span className=" mr-2">&#8594;</span>Designing a mock API using Java & Wiremock for a 3rd party endpoint - end up saving the team thousands in API calls.</li>
-                <li className="  py-1"><span className=" mr-2">&#8594;</span>Fixing various bugs and updating outdated code and packages</li>
-                <li className="  py-1"><span className=" mr-2">&#8594;</span> .NET | C# | SQL | Jenkins | Jira | Git | SDLC </li>        
+              <h4 className=" py-4 text-teal-500 dark:text-yellow-400">June 2023 - Current</h4>
+              <ul className=" list-none text-gray-500 py-1 dark:text-white px-10"> 
+                <li className="  py-4">.NET | C# | SQL | Jenkins | Jira | Git | CI/CD </li>        
               </ul>
             </div>
 
@@ -144,38 +187,112 @@ export default function Home() {
               <Image src={alexion} width={200} height={200} className=" m-auto"/>
               <h3 className=" text-lg font-medium pt-8 pb-2">Alexion (AstraZeneca Rare Disease)</h3>
               <p className=" py-2">IT Software Engineer Intern</p>
-              <h4 className=" py-4 text-teal-500">June 2022 - August 2022</h4>
+              <h4 className=" py-4 text-teal-500 dark:text-yellow-400">June 2022 - August 2022</h4>
               <ul className=" list-none text-gray-500 py-1 dark:text-white px-10">
-                <li className="  py-1"><span className=" mr-2">&#8594;</span>Wrote a python script for monitoring account compliance resulting in efficient database access. </li>
-                <li className="  py-1"><span className=" mr-2">&#8594;</span>Analyzed existing process for regular maintenance of database and optimized by removing filter saving one time 15 GB and ongoing 12 GB per month</li>
-                <li className="  py-1"><span className=" mr-2">&#8594;</span>Innovated querying capability with a user-friendly interface allowing non-technical users access to human readable error messages resulting in real-time decision making</li>
-                <li className="  py-1"><span className=" mr-2">&#8594;</span>Published a knowledge base article to document how to fix SSL error to prevent error for colleaguesgoing forward</li>
-                <li className="  py-1"><span className=" mr-2">&#8594;</span>Won a hackathon to kickstart Alexion Rideshare App using React Native, Node.js, git</li>  
-                <li className="  py-1"><span className=" mr-2">&#8594;</span> Python | Docker | Databases | REST API's | Agile </li>        
+                <li className="  py-4"> Python | Docker | Databases | REST API's | Agile </li>        
               </ul>
             </div>
 
         </div>
       </section>
 
-      <section>
-        <div className="dark:text-white">
+
+      {/* Projects Section*/}
+      <section id = "projects">
+        <div className=" dark:text-white">
           <h3 className=" text-3xl py-1">Projects</h3>
-          <p className=" text-md py-5 leading-8 text-gray-800 dark:text-gray-300">
-            I have had a few prior internship experiences including.
-          </p>
         </div>
 
         <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-          <div className=" basis-1/3 flex-1"><Image src={web3} className=" rounded-lg object-cover" width={"100%"} height={"80%"} layout="responsive"></Image></div>
-          <div className=" basis-1/3 flex-1"><Image src={web4} className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image></div>
-          <div className=" basis-1/3 flex-1"><Image src={web2} className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image></div>
-          <div className=" basis-1/3 flex-1"><Image src={web5} className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image></div>
-          <div className=" basis-1/3 flex-1"><Image src={web1} className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image></div>
-          <div className=" basis-1/3 flex-1"><Image src={web6} className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image></div>
+          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
+            <h2 className=" text-2xl font-medium pb-5">Snap Sudoku</h2>
+            <p className=" text-sm text-left pb-5">Participated in HackUMass IX creating a Sudoku solver app, ended up winning best use of AWS.</p>
+            <a href="https://fuseumass.github.io/HackUMass-IX-Projects/34.html" target="_blank">
+              <Image src={SnapSudoku}className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image>
+            </a>
+          </div>
 
+
+          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
+            <h2 className=" text-2xl font-medium pb-5">MoodMix</h2>
+            <p className=" text-sm text-left pb-5">Collaborated with friends to develop a captivating mobile app that curates a personalized playlist and movie based on someones mood.</p>
+            <a href="https://dashboard.hackher413.com/projects/9" target="_blank">
+            <Image src={MoodMix1} className=" rounded-lg object-contain " width={"100%"} height={"100%"} style={{ maxWidth: '100%', maxHeight: '100%' }}></Image>
+            </a>
+          </div>
+
+          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
+            <h2 className=" text-2xl font-medium pb-5">Quantitative Trading Tools</h2>
+            <p className=" text-sm text-left pb-2">Desinged various quantitative tools to assist personal trading. This code is proprietary to me but you can reach out to me for more details.</p>
+            <a href="https://polygon.io/" target="_blank">
+              <Image src={Stocks}className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image>
+            </a>
+          </div>
+
+          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
+            <h2 className=" text-2xl font-medium pb-5">Clue Game</h2>
+            <p className=" text-sm text-left pb-5">Devleoped a text based clue game in the C programming language as part of my systems class.</p>
+            <a href="https://github.com/amotupalli7/Clue" target="_blank">
+              <Image src={Clue}className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image>
+            </a>
+          </div>
         </div>
       </section>
+
+
+    {/* Contact Section*/}
+    <section id = "contact">
+      
+        <h3 className=" text-3xl py-1 dark:text-white">Contact Me</h3>
+
+        <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+          <div className=" basis-1/3 flex-1 text-left shadow-lg p-10 rounded-xl dark:bg-gray-800 dark:text-gray-300">
+            <p className=" dark:text-white text-lg pb-5">I am currently interested in any internships or co-op opportunites that will enhance my education and
+            allow me to provide value. I am currently located in the Hartford County region in Connecticut but am open to working anywhere!</p>
+            <p className=" dark:text-white text-lg">Feel free to reach out to me by email or through my linkedin below.</p>
+
+            <div className="flex items-center ml-5 sm:ml-0">
+              <a href="mailto:sspmam@gmail.com" className=" whitespace-nowrap">
+                <AiOutlineMail className="lg:text-5xl my-5 mx-2 sm:text-xl ml-15" />
+              </a>
+              <a href="mailto:sspmam@gmail.com" className=" whitespace-nowrap">sspmam@gmail.com</a>
+
+              <div className="flex items-center ml-5 sm:ml-2">
+                <a href="https://github.com/amotupalli7" target="_blank" rel="noopener noreferrer">
+                  <AiFillLinkedin className=" lg:text-5xl my-5 mx-2 sm:text-xl" />
+                </a>
+                <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer" className="ml-2 sm:ml-0 text-md">
+                  LinkedIn
+                </a> {/* Replace with your actual LinkedIn profile URL */}
+              </div>
+            </div>
+
+
+            
+          </div>
+
+
+          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl  dark:bg-gray-800 dark:text-gray-300">
+            <div style={{ height: '400px', width: '100%' }}>
+              <MapContainer
+                center={coordinates}
+                zoom={13}
+                style={{ height: '100%', width: '100%' }}
+              >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+              />
+              <Marker position = {coordinates}>
+              <Popup autoOpen>
+                This is my school!
+              </Popup>
+              </Marker>
+          </MapContainer>
+        </div>
+          </div>
+        </div>
+    </section>
 
     </main>
     </div>
