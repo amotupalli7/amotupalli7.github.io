@@ -88,7 +88,7 @@ export default function Home() {
 
           <h2 className="text-4xl py-2 text-teal-600 font-medium md:text-6xl sm:text-5xl dark:text-yellow-400">Hello!</h2>
           <h2 className=" text-4xl py-2 text-teal-600 font-medium md:text-6xl sm:text-5xl dark:text-yellow-400"> 
-            <span>I'm </span>  
+            <span>I&apos;m </span>
             <span className={`inline-block dark:text-yellow-400`}> A</span>
             <span className={`inline-block dark:text-yellow-400`}>b</span>
             <span className={`inline-block dark:text-yellow-400`}> h</span>
@@ -172,7 +172,7 @@ export default function Home() {
               <p className=" py-2">IT Software Engineer Intern</p>
               <h4 className=" py-4 text-teal-500 dark:text-yellow-400">June 2022 - August 2022</h4>
               <ul className=" list-none text-gray-500 py-1 dark:text-white px-10">
-                <li className="  py-4"> Python | Docker | Databases | REST API's | Agile </li>        
+                <li className=" py-4"> Python | Docker | Databases | REST API&apos;s | Agile </li>        
               </ul>
             </div>
 
