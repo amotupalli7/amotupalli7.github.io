@@ -1,9 +1,6 @@
-
 'use client'
-import Head from "next/head";
 import {BsFillMoonStarsFill} from 'react-icons/bs';
-import { AiFillLinkedin, AiFillGithub,AiOutlineMenu,AiOutlineClose,AiOutlineMail,AiOutlineRobot} from "react-icons/ai";
-import {BsEmojiSmile} from "react-icons/bs";
+import { AiFillLinkedin, AiFillGithub,AiOutlineMenu,AiOutlineClose,AiOutlineMail} from "react-icons/ai";
 import { HiCube } from "react-icons/hi";
 import React, { useState } from "react";
 import Image from "next/image";
@@ -21,11 +18,6 @@ import Stocks from "../../public/stocks.jpg"
 import { MapContainer, TileLayer, Marker,Popup } from 'react-leaflet';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 import 'leaflet-defaulticon-compatibility';
-
-import { Damion } from "next/font/google";
-
-
-{/* */}
 
 
 export default function Home() {
@@ -47,54 +39,45 @@ export default function Home() {
   const coordinates = [41.7658, -72.6734];
 
   return (
+
     <div className = {darkMode ? "dark" : ""}>
-    <main className=" bg-gray-100 px-10 md:px-20 lg:px-40 dark:bg-gray-900">
+      <main className=" bg-gray-100 px-10 md:px-20 lg:px-40 dark:bg-gray-900">
       
-      {/* Navbar Regular */}
       <section className=" min-h-screen ">
-        {/* <nav className="py-10 mb-12 flex justify-between ">
-          <h1 className=" text-xl dark:text-white">Abhi</h1>
-          <ul className="flex items-center ">
-            <li><a href="#about" className=" hover:underline hover:underline-offset-8 text-black text-lg py-2 rounded-md ml-16 dark:text-white">About</a></li>
-            <li><a href="#experience" className=" hover:underline hover:underline-offset-8 text-black text-lg py-2 rounded-md ml-8 dark:text-white">Experience</a></li>
-            <li><a href="#projects" className=" hover:underline hover:underline-offset-8 text-black text-lg py-2 rounded-md ml-8 dark:text-white">Projects</a></li>
-            <li><a href="#contact" className=" hover:underline hover:underline-offset-8 text-black text-lg py-2 rounded-md ml-8 dark:text-white">Contact</a></li>
-            <li><BsFillMoonStarsFill onClick= {toggleDarkMode}  className=" cursor-pointer text-2xl  ml-16 dark:text-white "/> </li>
 
-          </ul>
-        </nav> */}
+        {/* Navbar*/}
 
-        {/* Navbar Hamburger */}
         <nav className="py-10 mb-12 flex justify-between ">
           <div className='w-full fixed top-0 left-0 bg-gray-200 mb-12'>
             <div className='md:flex items-center justify-between py-4 md:px-10 px-7'>
-            <div className='font-bold text-2xl cursor-pointer flex items-center text-gray-800'>
-            <span className='text-3xl text-teal-600 mr-1 pt pr-2'>
-            <a href="#top">
-              <HiCube/>
-            </a>
-            </span>
-            <a href="#top">
-              Abhi
-            </a>
-            </div>
+              <div className='font-bold text-2xl cursor-pointer flex items-center text-gray-800'>
+                <span className='text-3xl text-teal-600 mr-1 pt pr-2'>
+                  <a href="#top">
+                    <HiCube/>
+                  </a>
+                </span>
+                  <a href="#top">
+                    Abhi
+                  </a>
+              </div>
           
-            <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
-            {open ? <AiOutlineClose className="pb-1" /> : <AiOutlineMenu className="pb-1" />}
-              <ion-icon name={open ? 'close':'menu'}></ion-icon>
-            </div>
+            {/* Hamburger nav dynamic */}
 
-            <ul className={`max-w-full bg-gray-200 md:flex md:items-center md:pb-0 pb-12 absolute md:static  
-            md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all ${open ? 'top-15 ':'top-[-490px]'}`}>
-              {
-                Links.map((link)=>(
-                  <li key={link.name} className='md:ml-8 lg:text-xl sm:text-sm md:my-0 my-7 '>
-                    <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500' onClick={()=>setOpen(!open)}>{link.name}</a>
-                  </li>
-                ))
-              }
-              <li><BsFillMoonStarsFill onClick= {toggleDarkMode}  className=" cursor-pointer lg:text-2xl sm:text-lg lg:ml-16 sm:ml-4 "/> </li>
-            </ul>
+            <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
+              {open ? <AiOutlineClose className="pb-1" /> : <AiOutlineMenu className="pb-1" />}
+
+            </div>
+              <ul className={`max-w-full bg-gray-200 md:flex md:items-center md:pb-0 pb-12 absolute md:static  
+              md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all ${open ? 'top-15 ':'top-[-490px]'}`}>
+                {
+                  Links.map((link)=>(
+                    <li key={link.name} className='md:ml-8 lg:text-xl sm:text-sm md:my-0 my-7 '>
+                      <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500' onClick={()=>setOpen(!open)}>{link.name}</a>
+                    </li>
+                  ))
+                }
+                <li><BsFillMoonStarsFill onClick= {toggleDarkMode}  className=" cursor-pointer lg:text-2xl sm:text-lg lg:ml-16 sm:ml-4 "/> </li>
+              </ul>
             </div>
           </div>
         </nav>
@@ -138,41 +121,41 @@ export default function Home() {
 
       
       {/* About Section*/}
+
       <section id = "about">
         <h3 className=" text-3xl py-1 dark:text-white">About Me</h3>
-        <p className=" text-md py-5 leading-8 text-gray-800 dark:text-gray-300">
-              I am a rising junior at the  
-        <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.cics.umass.edu/" target="_blank"> University of Massachussetts Amherst</a></span> and member of 
-        <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.umass.edu/honors/" target="_blank"> Commonwealth Honors College</a>.</span>
+          <p className=" text-md py-5 leading-8 text-gray-800 dark:text-gray-300">
+                I am a rising junior at the  
+          <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.cics.umass.edu/" target="_blank"> University of Massachussetts Amherst</a></span> and member of 
+          <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.umass.edu/honors/" target="_blank"> Commonwealth Honors College</a>.</span>
         </p>
 
         <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800 dark:text-gray-300">
-              <Image src={umass_logo} width={150} height={150} className=" m-auto"/>
-              <h3 className=" text-lg font-medium pt-8 pb-2">B.S. Computer Science | 2025</h3>
-              <h4 className=" py-4 text-teal-500 dark:text-yellow-400">Coursework</h4>
-              <div className=" grid grid-cols-2 gap-2  ">
-                <p className=" text-gray-500 py-1 dark:text-white">Honors Computer Networks</p>
-                <p className=" text-gray-500 py-1 dark:text-white">Computer System Principles</p>
-                <p className=" text-gray-500 py-1 dark:text-white">Programming Methodologies</p>
-                <p className=" text-gray-500 py-1 dark:text-white">Data Structures</p>
-                <p className=" text-gray-500 py-1 dark:text-white">Algorithms</p>
-                <p className=" text-gray-500 py-1 dark:text-white">Software Engineering</p>
-                <p className=" text-gray-500 py-1 dark:text-white">Data Management</p>
-                <p className=" text-gray-500 py-1 dark:text-white">Computer & Network Security</p>
-              </div>
-            </div>
+          <Image src={umass_logo} width={150} height={150} className=" m-auto"/>
+          <h3 className=" text-lg font-medium pt-8 pb-2">B.S. Computer Science | 2025</h3>
+          <h4 className=" py-4 text-teal-500 dark:text-yellow-400">Coursework</h4>
+          <div className=" grid grid-cols-2 gap-2  ">
+            <p className=" text-gray-500 py-1 dark:text-white">Honors Computer Networks</p>
+            <p className=" text-gray-500 py-1 dark:text-white">Computer System Principles</p>
+            <p className=" text-gray-500 py-1 dark:text-white">Programming Methodologies</p>
+            <p className=" text-gray-500 py-1 dark:text-white">Data Structures</p>
+            <p className=" text-gray-500 py-1 dark:text-white">Algorithms</p>
+            <p className=" text-gray-500 py-1 dark:text-white">Software Engineering</p>
+            <p className=" text-gray-500 py-1 dark:text-white">Data Management</p>
+            <p className=" text-gray-500 py-1 dark:text-white">Computer & Network Security</p>
+          </div>
+        </div>
       </section>
 
 
       {/* Experience Section*/}
+
       <section id = "experience">
+
         <div>
           <h3 className=" text-3xl py-1 dark:text-white">Experience</h3>
- 
         </div>
-        
         <div className=" lg:flex gap-10 dark:text-gray-300">
-
             <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800">
               <Image src={advisor} width={200} height={200} className=" m-auto"/>
               <h3 className=" text-lg font-medium pt-8 pb-2">Advisor360</h3>
@@ -198,6 +181,7 @@ export default function Home() {
 
 
       {/* Projects Section*/}
+      
       <section id = "projects">
         <div className=" dark:text-white">
           <h3 className=" text-3xl py-1">Projects</h3>
@@ -266,9 +250,6 @@ export default function Home() {
                 </a> {/* Replace with your actual LinkedIn profile URL */}
               </div>
             </div>
-
-
-            
           </div>
 
 
