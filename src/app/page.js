@@ -9,7 +9,7 @@ import umass_logo from "../../public/umass_logo.png"
 import advisor from "../../public/advisor.png"
 import alexion from "../../public/alexion.png"
 
-import MoodMix1 from "../../public/MoodMix1.png"
+import MoodMix1 from "../../public/MoodMix1.PNG"
 
 import SnapSudoku from "../../public/SnapSudoku.png"
 import Clue from "../../public/clue.jpg"
