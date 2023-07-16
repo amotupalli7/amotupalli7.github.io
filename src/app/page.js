@@ -71,7 +71,7 @@ export default function Home() {
             <div className='font-bold text-2xl cursor-pointer flex items-center text-gray-800'>
             <span className='text-3xl text-teal-600 mr-1 pt pr-2'>
             <a href="#top">
-              <BsEmojiSmile/>
+              <HiCube/>
             </a>
             </span>
             <a href="#top">
