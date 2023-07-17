@@ -15,9 +15,9 @@ import SnapSudoku from "../../public/SnapSudoku.png"
 import Clue from "../../public/clue.jpg"
 import Stocks from "../../public/stocks.jpg"
 
-import { MapContainer, TileLayer, Marker,Popup } from 'react-leaflet';
-import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
-import 'leaflet-defaulticon-compatibility';
+// import { MapContainer, TileLayer, Marker,Popup } from 'react-leaflet-universal';
+// import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
+// import 'leaflet-defaulticon-compatibility';
 
 
 export default function Home() {
@@ -192,7 +192,7 @@ export default function Home() {
             <h2 className=" text-2xl font-medium pb-5">Snap Sudoku</h2>
             <p className=" text-sm text-left pb-5">Participated in HackUMass IX creating a Sudoku solver app, ended up winning best use of AWS.</p>
             <a href="https://fuseumass.github.io/HackUMass-IX-Projects/34.html" target="_blank">
-              <Image src={SnapSudoku}className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image>
+              <Image src={SnapSudoku}className=" rounded-lg object-cover" width={"100%"} height={"100%"}></Image>
             </a>
           </div>
 
@@ -209,7 +209,7 @@ export default function Home() {
             <h2 className=" text-2xl font-medium pb-5">Quantitative Trading Tools</h2>
             <p className=" text-sm text-left pb-2">Desinged various quantitative tools to assist personal trading. This code is proprietary to me but you can reach out to me for more details.</p>
             <a href="https://polygon.io/" target="_blank">
-              <Image src={Stocks}className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image>
+              <Image src={Stocks}className=" rounded-lg object-cover" width={"100%"} height={"100%"}></Image>
             </a>
           </div>
 
@@ -217,7 +217,7 @@ export default function Home() {
             <h2 className=" text-2xl font-medium pb-5">Clue Game</h2>
             <p className=" text-sm text-left pb-5">Devleoped a text based clue game in the C programming language as part of my systems class.</p>
             <a href="https://github.com/amotupalli7/Clue" target="_blank">
-              <Image src={Clue}className=" rounded-lg object-cover" width={"100%"} height={"100%"} layout="responsive"></Image>
+              <Image src={Clue}className=" rounded-lg object-cover" width={"100%"} height={"100%"}></Image>
             </a>
           </div>
         </div>
