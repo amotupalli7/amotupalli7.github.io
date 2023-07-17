@@ -253,7 +253,7 @@ export default function Home() {
           </div>
 
 
-          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl  dark:bg-gray-800 dark:text-gray-300">
+          {/* <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl  dark:bg-gray-800 dark:text-gray-300">
             <div style={{ height: '400px', width: '100%' }}>
               <MapContainer
                 center={coordinates}
@@ -271,7 +271,7 @@ export default function Home() {
               </Marker>
           </MapContainer>
         </div>
-          </div>
+          </div> */}
         </div>
     </section>
 
