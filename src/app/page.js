@@ -63,7 +63,7 @@ export default function Home() {
           
             {/* Hamburger nav dynamic */}
 
-            <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
+            <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden text-black '>
               {open ? <AiOutlineClose className="pb-1" /> : <AiOutlineMenu className="pb-1" />}
 
             </div>
@@ -76,7 +76,7 @@ export default function Home() {
                     </li>
                   ))
                 }
-                <li><BsFillMoonStarsFill onClick= {toggleDarkMode}  className=" cursor-pointer lg:text-2xl sm:text-lg lg:ml-16 sm:ml-4 "/> </li>
+                <li><BsFillMoonStarsFill onClick= {toggleDarkMode}  className=" cursor-pointer lg:text-2xl sm:text-lg lg:ml-16 sm:ml-4 text-black  "/> </li>
               </ul>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function Home() {
             <span className={`inline-block dark:text-yellow-400`}>i</span>
 
           </h2>
-          <h3 className=" text 2xl py-2 md:text-3xl">Software Engineer</h3>
+          <h3 className=" text 2xl py-2 md:text-3xl text-teal-600 dark:text-yellow-400">Software Engineer </h3>
           <p className=" text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-gray-300">CS student and aspiring software engineer. Looking for ways to grow knowledge through industry experience.</p>
         </div>
 
@@ -123,8 +123,8 @@ export default function Home() {
       {/* About Section*/}
 
       <section id = "about">
-        <h3 className=" text-3xl py-1 dark:text-white">About Me</h3>
-          <p className=" text-md py-5 leading-8 text-gray-800 dark:text-gray-300">
+        <h3 className=" text-3xl py-1 text-teal-600 dark:text-yellow-400">About Me</h3>
+          <p className=" text-md py-5 leading-8 text-teal-600 dark:text-yellow-400">
                 I am a rising junior at the  
           <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.cics.umass.edu/" target="_blank"> University of Massachussetts Amherst</a></span> and member of 
           <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.umass.edu/honors/" target="_blank"> Commonwealth Honors College</a>.</span>
@@ -153,13 +153,13 @@ export default function Home() {
       <section id = "experience">
 
         <div>
-          <h3 className=" text-3xl py-1 dark:text-white">Experience</h3>
+          <h3 className=" text-3xl py-1 text-teal-600 dark:text-yellow-400">Experience</h3>
         </div>
         <div className=" lg:flex gap-10 dark:text-gray-300">
             <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800">
               <Image src={advisor} width={200} height={200} className=" m-auto"/>
-              <h3 className=" text-lg font-medium pt-8 pb-2">Advisor360</h3>
-              <p className=" py-2">Software Engineer Intern</p>
+              <h3 className=" text-lg font-medium pt-8 pb-2 text-teal-600 dark:text-yellow-400">Advisor360</h3>
+              <p className=" py-2 text-teal-600 dark:text-yellow-400">Software Engineer Intern</p>
               <h4 className=" py-4 text-teal-500 dark:text-yellow-400">June 2023 - Current</h4>
               <ul className=" list-none text-gray-500 py-1 dark:text-white px-10"> 
                 <li className="  py-4">.NET | C# | SQL | Jenkins | Jira | Git | CI/CD </li>        
@@ -168,8 +168,8 @@ export default function Home() {
 
             <div className=" text-center shadow-lg p-10 rounded-xl my-10 flex-1 dark:bg-gray-800">
               <Image src={alexion} width={200} height={200} className=" m-auto"/>
-              <h3 className=" text-lg font-medium pt-8 pb-2">Alexion (AstraZeneca Rare Disease)</h3>
-              <p className=" py-2">IT Software Engineer Intern</p>
+              <h3 className=" text-lg font-medium pt-8 pb-2 text-teal-600 dark:text-yellow-400">Alexion (AstraZeneca Rare Disease)</h3>
+              <p className=" py-2 text-teal-600 dark:text-yellow-400">IT Software Engineer Intern</p>
               <h4 className=" py-4 text-teal-500 dark:text-yellow-400">June 2022 - August 2022</h4>
               <ul className=" list-none text-gray-500 py-1 dark:text-white px-10">
                 <li className=" py-4"> Python | Docker | Databases | REST API&apos;s | Agile </li>        
@@ -184,13 +184,13 @@ export default function Home() {
       
       <section id = "projects">
         <div className=" dark:text-white">
-          <h3 className=" text-3xl py-1">Projects</h3>
+          <h3 className=" text-3xl py-1 text-teal-600 dark:text-yellow-400">Projects</h3>
         </div>
 
         <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
           <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
-            <h2 className=" text-2xl font-medium pb-5">Snap Sudoku</h2>
-            <p className=" text-sm text-left pb-5">Participated in HackUMass IX creating a Sudoku solver app, ended up winning best use of AWS.</p>
+            <h2 className=" text-2xl font-medium pb-5 text-teal-600 dark:text-yellow-400">Snap Sudoku</h2>
+            <p className=" text-sm text-left pb-5 text-gray-500 dark:text-white">Participated in HackUMass IX creating a Sudoku solver app, ended up winning best use of AWS.</p>
             <a href="https://fuseumass.github.io/HackUMass-IX-Projects/34.html" target="_blank">
               <Image src={SnapSudoku}className=" rounded-lg object-cover" width={"100%"} height={"100%"}></Image>
             </a>
@@ -198,26 +198,28 @@ export default function Home() {
 
 
           <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
-            <h2 className=" text-2xl font-medium pb-5">MoodMix</h2>
-            <p className=" text-sm text-left pb-5">Collaborated with friends to develop a captivating mobile app that curates a personalized playlist and movie based on someones mood.</p>
+            <h2 className=" text-2xl font-medium pb-5 text-teal-600 dark:text-yellow-400">MoodMix</h2>
+            <p className=" text-sm text-left pb-5 text-gray-500 dark:text-white">Collaborated with friends to develop a captivating mobile app that curates a personalized playlist and movie based on someones mood.</p>
             <a href="https://dashboard.hackher413.com/projects/9" target="_blank">
             <Image src={MoodMix1} className=" rounded-lg object-contain " width={"100%"} height={"100%"} style={{ maxWidth: '100%', maxHeight: '100%' }}></Image>
             </a>
           </div>
 
           <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
-            <h2 className=" text-2xl font-medium pb-5">Quantitative Trading Tools</h2>
-            <p className=" text-sm text-left pb-2">Desinged various quantitative tools to assist personal trading. This code is proprietary to me but you can reach out to me for more details.</p>
+            <h2 className=" text-2xl font-medium pb-5 text-teal-600 dark:text-yellow-400">Quantitative Trading Tools</h2>
+            <p className=" text-sm text-left pb-2 text-gray-500 dark:text-white">Desinged various quantitative tools to assist personal trading. This code is proprietary to me but you can reach out to me for more details.</p>
             <a href="https://polygon.io/" target="_blank">
               <Image src={Stocks}className=" rounded-lg object-cover" width={"100%"} height={"100%"}></Image>
             </a>
           </div>
 
-          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
-            <h2 className=" text-2xl font-medium pb-5">Clue Game</h2>
-            <p className=" text-sm text-left pb-5">Devleoped a text based clue game in the C programming language as part of my systems class.</p>
+          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10  dark:bg-gray-800 dark:text-gray-300">
+            <h2 className=" text-2xl font-medium pb-5 text-teal-600 dark:text-yellow-400">Clue Game</h2>
+            <p className=" text-sm text-left pb-5 text-gray-500 dark:text-white">Devleoped a text based clue game in the C programming language as part of my systems class.</p>
             <a href="https://github.com/amotupalli7/Clue" target="_blank">
+              <div className=' lg:mx-20 md:mx-10 sm:mx-0'>
               <Image src={Clue}className=" rounded-lg object-cover" width={"100%"} height={"100%"}></Image>
+              </div>
             </a>
           </div>
         </div>
@@ -227,22 +229,22 @@ export default function Home() {
     {/* Contact Section*/}
     <section id = "contact">
       
-        <h3 className=" text-3xl py-1 dark:text-white">Contact Me</h3>
+        <h3 className=" text-3xl py-1 text-teal-600 dark:text-yellow-400">Contact Me</h3>
 
         <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
           <div className=" basis-1/3 flex-1 text-left shadow-lg p-10 rounded-xl dark:bg-gray-800 dark:text-gray-300">
-            <p className=" dark:text-white text-lg pb-5">I am currently interested in any internships or co-op opportunites that will enhance my education and
+            <p className=" text-gray-500 dark:text-white text-lg pb-5">I am currently interested in any internships or co-op opportunites that will enhance my education and
             allow me to provide value. I am currently located in the Hartford County region in Connecticut but am open to working anywhere!</p>
-            <p className=" dark:text-white text-lg">Feel free to reach out to me by email or through my linkedin below.</p>
+            <p className=" dark:text-white text-lg">Feel free to reach out to me by email or through my LinkedIn below.</p>
 
-            <div className="flex items-center ml-5 sm:ml-0">
+            <div className="flex items-center ml-5 sm:ml-0 text-gray-500 dark:text-white">
               <a href="mailto:sspmam@gmail.com" className=" whitespace-nowrap">
                 <AiOutlineMail className="lg:text-5xl my-5 mx-2 sm:text-xl ml-15" />
               </a>
               <a href="mailto:sspmam@gmail.com" className=" whitespace-nowrap">sspmam@gmail.com</a>
 
-              <div className="flex items-center ml-5 sm:ml-2">
-                <a href="https://github.com/amotupalli7" target="_blank" rel="noopener noreferrer">
+              <div className="flex items-center ml-5 sm:ml-2 text-gray-500 dark:text-white">
+                <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer">
                   <AiFillLinkedin className=" lg:text-5xl my-5 mx-2 sm:text-xl" />
                 </a>
                 <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer" className="ml-2 sm:ml-0 text-md">
