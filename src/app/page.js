@@ -232,27 +232,29 @@ export default function Home() {
         <h3 className=" text-3xl py-1 text-teal-600 dark:text-yellow-400">Contact Me</h3>
 
         <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-          <div className=" basis-1/3 flex-1 text-left shadow-lg p-10 rounded-xl dark:bg-gray-800 dark:text-gray-300">
-            <p className=" text-gray-500 dark:text-white text-lg pb-5">I am currently interested in any internships or co-op opportunites that will enhance my education and
-            allow me to provide value. I am currently located in the Hartford County region in Connecticut but am open to working anywhere!</p>
-            <p className=" dark:text-white text-lg">Feel free to reach out to me by email or through my LinkedIn below.</p>
+        <div className="basis-1/3 flex-1 text-left shadow-lg p-10 rounded-xl dark:bg-gray-800 dark:text-gray-300">
+        <p className="text-gray-500 dark:text-white text-lg pb-5">I am currently interested in any internships or co-op opportunities that will enhance my education and
+          allow me to provide value. I am currently located in the Hartford County region in Connecticut but am open to working anywhere!
+        </p>
+        <p className="text-gray-500 dark:text-white text-lg">Feel free to reach out to me by email or through my LinkedIn below.</p>
 
-            <div className="flex items-center ml-5 sm:ml-0 text-gray-500 dark:text-white">
-              <a href="mailto:sspmam@gmail.com" className=" whitespace-nowrap">
-                <AiOutlineMail className="lg:text-5xl my-5 mx-2 sm:text-xl ml-15" />
-              </a>
-              <a href="mailto:sspmam@gmail.com" className=" whitespace-nowrap">sspmam@gmail.com</a>
+        <div className="flex flex-col items-center mt-5 sm:mt-0 sm:flex-row sm:items-center">
+          <a href="mailto:sspmam@gmail.com" className="whitespace-nowrap">
+            <AiOutlineMail className="lg:text-5xl my-2 mx-2 sm:text-xl sm:mx-0 sm:px-0" />
+          </a>
+          <a href="mailto:sspmam@gmail.com" className="whitespace-nowrap text-gray-500 dark:text-white">sspmam@gmail.com</a>
 
-              <div className="flex items-center ml-5 sm:ml-0 text-gray-500 dark:text-white">
-                <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer">
-                  <AiFillLinkedin className=" lg:text-5xl my-5 mx-2 sm:text-xl sm:my-2" />
-                </a>
-                <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer" className="ml-2 sm:ml-0 text-md">
-                  LinkedIn
-                </a> {/* Replace with your actual LinkedIn profile URL */}
-              </div>
-            </div>
+          <div className="flex items-center mt-5 sm:mt-0 sm:ml-10 text-gray-500 dark:text-white">
+            <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer">
+              <AiFillLinkedin className="lg:text-5xl sm:text-xl sm:mx-0" />
+            </a>
+            <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer" className="text-md">
+              LinkedIn
+            </a> {/* Replace with your actual LinkedIn profile URL */}
           </div>
+        </div>
+</div>
+
 
 
           {/* <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl  dark:bg-gray-800 dark:text-gray-300">
