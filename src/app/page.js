@@ -243,9 +243,9 @@ export default function Home() {
               </a>
               <a href="mailto:sspmam@gmail.com" className=" whitespace-nowrap">sspmam@gmail.com</a>
 
-              <div className="flex items-center ml-5 sm:ml-2 text-gray-500 dark:text-white">
+              <div className="flex items-center ml-5 sm:ml-0 text-gray-500 dark:text-white">
                 <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer">
-                  <AiFillLinkedin className=" lg:text-5xl my-5 mx-2 sm:text-xl" />
+                  <AiFillLinkedin className=" lg:text-5xl my-5 mx-2 sm:text-xl sm:my-2" />
                 </a>
                 <a href="https://www.linkedin.com/in/abhiram-motupalli-347332228/" target="_blank" rel="noopener noreferrer" className="ml-2 sm:ml-0 text-md">
                   LinkedIn
