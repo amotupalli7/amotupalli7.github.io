@@ -14,6 +14,7 @@ import MoodMix1 from "../../public/MoodMix1.PNG"
 import SnapSudoku from "../../public/SnapSudoku.png"
 import Clue from "../../public/clue.jpg"
 import Stocks from "../../public/stocks.jpg"
+import Website from "../../public/website.png"
 
 // import { MapContainer, TileLayer, Marker,Popup } from 'react-leaflet-universal';
 // import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
@@ -124,7 +125,7 @@ export default function Home() {
 
       <section id = "about">
         <h3 className=" text-3xl py-1 text-teal-600 dark:text-yellow-400">About Me</h3>
-          <p className=" text-md py-5 leading-8 text-teal-600 dark:text-yellow-400">
+          <p className=" text-md py-5 leading-8 text-gray-500 dark:text-white">
                 I am a rising junior at the  
           <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.cics.umass.edu/" target="_blank"> University of Massachussetts Amherst</a></span> and member of 
           <span className=" text-teal-500 dark:text-yellow-400 hover:underline hover:underline-offset-8"><a href="https://www.umass.edu/honors/" target="_blank"> Commonwealth Honors College</a>.</span>
@@ -207,7 +208,7 @@ export default function Home() {
 
           <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 dark:text-gray-300">
             <h2 className=" text-2xl font-medium pb-5 text-teal-600 dark:text-yellow-400">Quantitative Trading Tools</h2>
-            <p className=" text-sm text-left pb-2 text-gray-500 dark:text-white">Desinged various quantitative tools to assist personal trading. This code is proprietary to me but you can reach out to me for more details.</p>
+            <p className=" text-sm text-left pb-2 text-gray-500 dark:text-white">Innovated various quantitative tools to assist personal trading. This code is proprietary to me but you can reach out to me for more details.</p>
             <a href="https://polygon.io/" target="_blank">
               <Image src={Stocks}className=" rounded-lg object-cover" width={"100%"} height={"100%"}></Image>
             </a>
@@ -215,14 +216,23 @@ export default function Home() {
 
           <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10  dark:bg-gray-800 dark:text-gray-300">
             <h2 className=" text-2xl font-medium pb-5 text-teal-600 dark:text-yellow-400">Clue Game</h2>
-            <p className=" text-sm text-left pb-5 text-gray-500 dark:text-white">Devleoped a text based clue game in the C programming language as part of my systems class.</p>
+            <p className=" text-sm text-left pb-5 text-gray-500 dark:text-white">Developed a text based clue game in the C programming language as part of my systems class.</p>
             <a href="https://github.com/amotupalli7/Clue" target="_blank">
-              <div className=' lg:mx-20 md:mx-10 sm:mx-0'>
-              <Image src={Clue}className=" rounded-lg object-cover" width={"100%"} height={"100%"}></Image>
-              </div>
+              <Image src={Clue}className=" rounded-lg object-cover mx-auto" width={"100%"} height={"100%"}></Image>
             </a>
           </div>
+
+          <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl my-10  dark:bg-gray-800 dark:text-gray-300">
+            <h2 className=" text-2xl font-medium pb-5 text-teal-600 dark:text-yellow-400">Portfolio Website</h2>
+            <p className=" text-sm pb-5 text-gray-500 dark:text-white">Designed this web and mobile compatible porfolio website using React, Next.js and Node.js.</p>
+            <a href="https://github.com/amotupalli7/portfolio" target="_blank">
+              <Image src={Website}className=" rounded-lg object-cover lg:mx-auto" width={"100%"} height={"100%"}></Image>
+            </a>
+          </div>
+
         </div>
+
+        
       </section>
 
 
@@ -238,7 +248,7 @@ export default function Home() {
         </p>
         <p className="text-gray-500 dark:text-white text-lg">Feel free to reach out to me by email or through my LinkedIn below.</p>
 
-        <div className="flex flex-col items-center mt-5 sm:mt-0 sm:flex-row sm:items-center">
+        <div className="flex flex-col items-center mt-5 sm:mt-0 sm:flex-row sm:items-center text-gray-500 dark:text-white">
           <a href="mailto:sspmam@gmail.com" className="whitespace-nowrap">
             <AiOutlineMail className="lg:text-5xl my-2 mx-2 sm:text-xl sm:mx-0 sm:px-0" />
           </a>
@@ -256,6 +266,7 @@ export default function Home() {
 </div>
 
 
+        {/* Map Section*/}
 
           {/* <div className=" basis-1/3 flex-1 text-center shadow-lg p-10 rounded-xl  dark:bg-gray-800 dark:text-gray-300">
             <div style={{ height: '400px', width: '100%' }}>
