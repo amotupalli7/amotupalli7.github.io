@@ -25,7 +25,7 @@
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "loaders.css": "^0.1.2",
-    "next": "^13.4.10",
+    "next": "^14.1.1",
     "postcss": "8.4.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
